@@ -2,17 +2,25 @@
 layout: default 
 ---
 
+<div class="introduction">
+{% assign introduction = site.pages | where:"type","introduction" | first %}
+{{ introduction.content }}
+</div>
+
 <div class="pages">
-  {% for page in site.pages %}
-    <article class="page">
-
-      <h1><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h1>
-
-      <div class="entry">
-        {{ page.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ page.url }}" class="read-more">Read More</a>
-    </article>
+  {% assign sections = site.pages | where:"type","section" | sort:"order" %}
+  {% for page in sections %}
+    <div class="page">
+      <a href="{{ site.baseurl }}{{ page.url }}">
+        <img src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" />
+      </a>
+      <div class="desc">{{ page.title }}</div>
+    </div>
   {% endfor %}
 </div>
+
+<div class="newsfeed">
+  <!-- start feedwind code --> 
+  <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="62454/"></script> 
+  <!-- end feedwind code -->
+</div> 

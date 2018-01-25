@@ -3,6 +3,7 @@ layout: default
 ---
 
 <article class="page">
+  <a href="{{ site.baseurl }}/">&#8592 Home</a>
 
   <h1>{{ page.title }}</h1>
 
@@ -10,3 +11,45 @@ layout: default
     {{ content }}
   </div>
 </article>
+
+
+
+
+{% assign sections = site.pages | where:"type","section" | sort:"order" %}
+{% assign sectionsSize = sections | size %}
+{% for section in sections %}
+  {% if section.title == page.title and section.order == page.order %}
+    {% assign pageNo = forloop.index %}
+  {% endif %}
+{% endfor %}
+
+{% if pageNo > 1 %}
+  {% assign prevNo = pageNo | minus:2 %}
+  {% assign prevPage = sections[prevNo] %}
+
+  {% if prevPage.order >= 0 %}
+    {% assign previous = prevPage %}
+  {% endif %}
+{% endif %}
+
+{% if pageNo < sectionsSize %}
+  {% assign nextNo = pageNo | plus:0 %}
+  {% assign nextPage = sections[nextNo] %}
+
+  {% if nextPage %}
+    {% assign next = nextPage %}
+  {% endif %}
+{% endif %}
+
+
+<div class="page-navigation">
+  {% if previous.url %}
+    <a class="prev" href="{{ site.baseurl }}/{{ previous.url }}">&laquo; {{previous.title}}</a>
+    
+    {% if next.url %}
+        <a class="next" href="{{ site.baseurl }}/{{ next.url }}">{{ next.title }} &raquo;</a>
+    {% endif %}
+  {% elsif next.url %}
+    <a class="next" style="width:100%" href="{{ site.baseurl }}/{{ next.url }}">{{ next.title }} &raquo;</a>  
+  {% endif %}
+</div>

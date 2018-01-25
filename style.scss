@@ -7,6 +7,7 @@
 
 @import "reset";
 @import "variables";
+@import "additions";
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
@@ -25,7 +26,7 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 940px;
+  max-width: 820px;
   padding: 0 10px;
   width: 100%;
 }
@@ -151,7 +152,7 @@ img {
 //
 
 .wrapper-masthead {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .masthead {
@@ -272,7 +273,7 @@ nav {
 }
 
 .wrapper-footer {
-  margin-top: 50px;
+  margin-top: 15px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: $lightGray;

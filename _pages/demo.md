@@ -1,12 +1,9 @@
 ---
-layout: page 
-title: This is a demo
+layout: page
+type: section
+order: 1 
+title: Demo Page
+image: /images/demo.jpg
 ---
 
-This is a demo page designed to be used as a referenece when creating other pages!
-
-
-Here is an image
-
-![This is the images captionl]({{ site.baseurl }}/images/demo.jpg)
-
+This is a demo page. Use this as a reference for creating other page!

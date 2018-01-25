@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<article class="page">
+  <a href="{{ site.baseurl }}/">&#8592 Home</a>
+
+  <h1>{{ page.title }}</h1>
+
+  <div class="entry">
+    {{ content }}
+  </div>
+</article>
+
+
+
+
+{% assign pageNo = -1 %}
+{% assign sections = site.pages | where:"type","section" | sort:"order" %}
+{% for section in sections %}
+  {% if section.title == page.title and section.order == page.order %}
+    {% assign pageNo = forloop.index %}
+  {% endif %}
+{% endfor %}
+
+{{ pageNo }}
+
+
+
+<div class="page-navigation">
+  {% if page.previous.url %}
+    <a class="prev" href="{{ site.baseurl }}/{{ page.previous.url }}">&laquo; {{page.previous.title}}</a>
+    
+    {% if page.next.url %}
+        <a class="next" href="{{ site.baseurl }}/{{ page.next.url }}">{{ page.next.title }} &raquo;</a>
+    {% endif %}
+  {% elsif page.next.url %}
+    <a class="next" style="width:100%" href="{{ site.baseurl }}/{{ page.next.url }}">{{ page.next.title }} &raquo;</a>  
+  {% endif %}
+</div>

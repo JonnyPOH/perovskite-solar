@@ -1,0 +1,46 @@
+// Home Page Additions
+div.introduction {
+  margin-bottom: 50px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+div.pages { 
+  text-align: center;
+  margin-bottom: 15px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+div.page {
+  display: inline-block;
+  width: 200px;
+  height: auto;
+  margin: 5px;
+  margin-bottom: 15px;
+}
+
+div.page img {
+  width : 100%;
+  height: auto;
+}
+
+// Page Layout Additions
+.page-navigation {
+  font-size: 14px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.page-navigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+}
+
+.page-navigation .next {
+  text-align: right;
+}
+
