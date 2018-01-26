@@ -1,7 +1,19 @@
 /* Newsfeed Widget */
 div.fw-feed-title {
   margin: 0px;
+  padding-top: 2px;
+  border-bottom-color: #eee;
+}
+div.fw-feed-title a {
+  font: 18px Helvetica, Arial, sans-serif;
+  color: #333;
 }
 div.fw-feed-title a {
   margin-left: 5px;
+}
+div.fw-feed-item span {
+  font: Helvetica, Arial, sans-serif;
+}
+.fw-feed-item-image {
+  margin-right: 10px;
 }
