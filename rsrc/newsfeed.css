@@ -1,4 +1,7 @@
 /* Newsfeed Widget */
-.fw-feed-item-title {
-  color: green;
+div.fw-feed-title {
+  margin: 0px;
+}
+div.fw-feed-title a {
+  margin-left: 5px;
 }
