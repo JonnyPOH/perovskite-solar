@@ -1,1 +1,4 @@
-/* Newsfeed.css */
+/* Newsfeed Widget */
+.fw-feed-item-title {
+  color: green;
+}
