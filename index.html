@@ -2,10 +2,6 @@
 layout: default 
 ---
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="rsrc/solar_gauge.js"></script>
-
 <div class="introduction">
 {% assign introduction = site.pages | where:"type","introduction" | first %}
 {{ introduction.content }}
@@ -28,5 +24,3 @@ layout: default
   <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="62454/"></script> 
   <!-- end feedwind code -->
 </div>
-
-<div id="chart_div" style="width: 500px; height: 140px"></div> 
